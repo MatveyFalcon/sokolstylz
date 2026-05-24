@@ -1,0 +1,130 @@
+@font-face {
+  font-family: Spline Sans Mono;
+  src: url("SplineSansMono-Regular.85d32d8d.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Spline Sans Mono;
+  src: url("SplineSansMono-Medium.5baff408.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Unbounded;
+  src: url("Unbounded-Medium.76a91df8.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body {
+  font-family: Spline Sans Mono, monospace;
+  font-size: 10px;
+}
+
+a {
+  color: #0a0a0a;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.header .container {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.logo {
+  align-items: center;
+  gap: clamp(8px, .8vw, 20px);
+  display: flex;
+}
+
+.logo__image {
+  width: clamp(160px, 15vw, 320px);
+  transition: transform .4s cubic-bezier(.77, 0, .18, 1);
+}
+
+.header__list {
+  align-items: center;
+  gap: clamp(16px, 1.5vw, 40px);
+  display: flex;
+}
+
+.header__list a {
+  color: #2e2e2e;
+  font-size: clamp(20px, 1.3vw, 28px);
+  line-height: 1.2em;
+}
+
+.group-btn {
+  align-items: center;
+  gap: clamp(16px, 1.5vw, 40px);
+  display: flex;
+}
+
+.btn {
+  padding-bottom: .1em;
+  font-size: clamp(24px, 1.6vw, 36px);
+  font-weight: 500;
+  line-height: 1.2em;
+  position: relative;
+}
+
+.btn-icon-group {
+  align-items: center;
+  gap: clamp(4px, .5vw, 12px);
+  display: flex;
+}
+
+.btn-icon-group img {
+  width: .9em;
+  height: .9em;
+  transition: transform .4s cubic-bezier(.77, 0, .18, 1);
+}
+
+.bracket {
+  transition: transform .4s cubic-bezier(.77, 0, .18, 1);
+  display: inline-block;
+}
+
+.word {
+  display: inline-flex;
+}
+
+.letter {
+  height: 1em;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.letter span {
+  transition: transform .4s cubic-bezier(.77, 0, .18, 1);
+  display: block;
+}
+
+body {
+  color: #0a0a0a;
+  background-color: #fefefe;
+  padding: clamp(16px, 2.5vw, 32px);
+}
+
+.container {
+  max-width: 192rem;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=sokolstylz.ru.d01dfbe0.css.map */

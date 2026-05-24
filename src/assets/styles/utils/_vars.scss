@@ -1,0 +1,23 @@
+// fonts
+$font-main: "Spline Sans Mono", monospace;
+$font-title: "Unbounded", sans-serif;
+
+// font sizes
+$fs-sm: clamp(14px, 0.9vw, 18px);
+$fs-base: clamp(20px, 1.3vw, 28px);
+$fs-md: clamp(24px, 1.6vw, 36px);
+$fs-lg: clamp(32px, 2.2vw, 52px);
+$fs-xl: clamp(48px, 4vw, 88px);
+$fs-hero: clamp(72px, 7vw, 160px);
+
+// gaps
+$gap-xs: clamp(4px, 0.5vw, 12px);
+$gap-sm: clamp(8px, 0.8vw, 20px);
+$gap-md: clamp(16px, 1.5vw, 40px);
+$gap-lg: clamp(32px, 3vw, 72px);
+$gap-xl: clamp(48px, 5vw, 120px);
+
+// widths
+$width-sm: clamp(160px, 15vw, 320px);
+$width-md: clamp(320px, 30vw, 720px);
+$width-lg: clamp(720px, 60vw, 1400px);

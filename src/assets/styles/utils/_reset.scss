@@ -1,4 +1,23 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-size: 10px;
+	font-family: $font-main;
+}
+
+a {
+	text-decoration: none;
+	color: #0a0a0a;
+}
+
+img {
+	max-width: 100%;
+}
+
+ul {
+	list-style: none;
 }
