@@ -1,0 +1,29 @@
+{
+    "name": "wwwtemplate",
+    "version": "1.0.0",
+    "description": "Стартовый проект для сборки и разработки веб-макетов и UI Kit к ним.",
+    "scripts": {
+        "dev": "parcel src/index.html --open",
+        "kit": "parcel src/uikit.html --open",
+        "build:uikit": "rm -rf build/uikit && parcel build src/uikit.html --dist-dir build/uikit",
+        "build": "rm -rf build/uikit && parcel build src/index.html --dist-dir build/www"
+    },
+    "author": "Mikhail Nepomnyashchiy",
+    "license": "ISC",
+    "dependencies": {
+        "autoprefixer": "^10.4.27",
+        "parcel": "^2.16.4",
+        "postcss-modules": "^6.0.1",
+        "sass": "^1.98.0"
+    },
+    "browserslist": [
+        "last 5 version",
+        "ie 10"
+    ],
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.16.4"
+    },
+    "volta": {
+        "node": "20.10.0"
+    }
+}
