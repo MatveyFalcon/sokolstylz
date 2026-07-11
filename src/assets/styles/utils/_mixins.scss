@@ -1,0 +1,18 @@
+@mixin mobile {
+	@media (max-width: 1024px) {
+		@content;
+	}
+}
+
+%container {
+	max-width: 192rem;
+	margin: 0 auto;
+}
+
+%btn {
+	position: relative;
+	font-weight: 500;
+	font-size: $fs-md;
+	line-height: 1.2em;
+	padding-bottom: 0.1em;
+}

@@ -9,11 +9,26 @@
 	<body>
 		<header class="header">
 			<div class="container">
-				<a class="logo" href="#">
-					<div class="logo__image">
+				<a class="logo-link" href="#">
+					<div class="logo-link__group">
 						<img src="./assets/images/logo.svg" alt="logo" />
+						<span>SOKOLSTYLZ</span>
 					</div>
 				</a>
+
+				<button class="burger" aria-label="Открыть меню">
+					<img
+						class="burger__icon burger__icon-menu"
+						src="./assets/images/menu.svg"
+						alt=""
+					/>
+
+					<img
+						class="burger__icon burger__icon-close"
+						src="./assets/images/сlose.svg"
+						alt=""
+					/>
+				</button>
 
 				<nav class="nav">
 					<ul class="header__list">
@@ -86,20 +101,25 @@
 							</a>
 						</li>
 					</ul>
+					<div class="nav__mobile-actions"></div>
 				</nav>
-
-				<div class="group-btn">
+				<div class="header__links">
 					<a class="btn" href="./assets/files/Resume.pdf" target="_blank">
 						РЕЗЮМЕ
 					</a>
-					<a href="https://t.me/sokolstylz" class="btn" target="_blank">
-						<div class="btn-icon-group">
+					<a href="https://t.me/sokolstylz" class="btn-icon" target="_blank">
+						<div class="btn-icon__group">
 							<span>СВЯЗАТЬСЯ</span>
-							<img src="./assets/images/arrow.svg" alt="icon" />
+							<img
+								class="btn-icon__img"
+								src="./assets/images/arrow.svg"
+								alt="icon"
+							/>
 						</div>
 					</a>
 				</div>
 			</div>
 		</header>
+		<script type="module" src="./assets/js/main.js"></script>
 	</body>
 </html>

@@ -3,12 +3,7 @@
 @import "./layout";
 
 body {
-	background-color: #fefefe;
-	color: #0a0a0a;
+	background-color: $white;
+	color: $black;
 	padding: clamp(16px, 2.5vw, 32px);
-}
-
-.container {
-	max-width: 192rem;
-	margin: 0 auto;
 }
