@@ -1,11 +1,11 @@
-.container {
-	@extend %container;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
 .header {
+	&__wrapper {
+		@extend %container;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
 	position: relative;
 	&__list {
 		display: flex;
@@ -191,7 +191,7 @@
 	transform: rotate(45deg);
 }
 
-.logo-link:hover .logo-link__group img {
+.logo-link__group img.rotate {
 	transform: rotate(90deg);
 }
 
@@ -214,7 +214,7 @@
 		align-items: center;
 		justify-content: space-between;
 
-		padding: 120px 24px 40px;
+		padding: 160px 24px 40px;
 
 		background: $black;
 

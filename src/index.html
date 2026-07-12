@@ -7,9 +7,9 @@
 		<link rel="stylesheet" href="./assets/styles/index.scss" />
 	</head>
 	<body>
-		<header class="header">
-			<div class="container">
-				<a class="logo-link" href="#">
+		<header class="header" id="top">
+			<div class="header__wrapper">
+				<a class="logo-link" href="#top">
 					<div class="logo-link__group">
 						<img src="./assets/images/logo.svg" alt="logo" />
 						<span>SOKOLSTYLZ</span>
@@ -121,5 +121,31 @@
 			</div>
 		</header>
 		<script type="module" src="./assets/js/main.js"></script>
+		<main class="main">
+			<section class="hero">
+				<div class="hero__wrapper">
+					<div class="hero__top">
+						<div class="hero__content">
+							<div class="hero__subtitle-group">
+								<p class="hero__subtitle">/ WEB DESIGNER</p>
+								<p class="hero__subtitle">/ FRONTEND DEVELOPER</p>
+							</div>
+
+							<h1 class="hero__title">ДИЗАЙН</h1>
+						</div>
+
+						<div class="hero__photo">
+							<img
+								class="hero__image"
+								src="./assets/images/myphoto.webp"
+								alt="Матвей Соколов"
+							/>
+						</div>
+					</div>
+
+					<h1 class="hero__title hero__title--bottom">& РАЗРАБОТКА</h1>
+				</div>
+			</section>
+		</main>
 	</body>
 </html>

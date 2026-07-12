@@ -4,6 +4,37 @@
 	}
 }
 
+@mixin h2($color: $black, $align: center, $transform: uppercase) {
+	color: $color;
+	font-size: $fs-hero;
+	text-align: $align;
+	line-height: 1.4;
+	font-weight: 500;
+	font-family: $font-title;
+	letter-spacing: -0.04em;
+	text-transform: $transform;
+}
+
+@mixin h3($color: $black, $align: center, $transform: uppercase) {
+	color: $color;
+	font-size: $fs-md;
+	text-align: $align;
+	line-height: 1.4;
+	font-weight: 400;
+	font-family: $font-main;
+	letter-spacing: 0.52em;
+	text-transform: $transform;
+}
+
+@mixin p($color: $black, $align: center, $transform: uppercase) {
+	color: $color;
+	font-size: $fs-base;
+	text-align: $align;
+	font-weight: 400;
+	font-family: $font-main;
+	text-transform: $transform;
+}
+
 %container {
 	max-width: 192rem;
 	margin: 0 auto;
