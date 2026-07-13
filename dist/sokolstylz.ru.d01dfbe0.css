@@ -42,7 +42,7 @@ ul {
   list-style: none;
 }
 
-.hero__wrapper, .header__wrapper {
+.projects__wrapper, .hero__wrapper, .header__wrapper {
   max-width: 192rem;
   margin: 0 auto;
 }
@@ -53,6 +53,14 @@ ul {
   font-weight: 500;
   line-height: 1.2em;
   position: relative;
+}
+
+.info-bar {
+  border-top: 1px solid #ababab;
+  justify-content: space-between;
+  padding-top: clamp(8px, .8vw, 20px);
+  padding-bottom: clamp(48px, 5vw, 120px);
+  display: flex;
 }
 
 .header__wrapper {
@@ -106,6 +114,16 @@ ul {
   width: 1.2em;
   height: 1.2em;
   transition: transform .4s cubic-bezier(.77, 0, .18, 1);
+}
+
+.logo-link__group img.rotate {
+  transform: rotate(360deg);
+}
+
+@media (hover: hover) {
+  .logo-link:hover .logo-link__group img:not(.rotate) {
+    transform: rotate(90deg);
+  }
 }
 
 .btn-icon__group {
@@ -247,10 +265,6 @@ ul {
   transform: rotate(45deg);
 }
 
-.logo-link__group img.rotate {
-  transform: rotate(90deg);
-}
-
 @media (width <= 1024px) {
   .header .container {
     flex-wrap: wrap;
@@ -325,7 +339,7 @@ ul {
 }
 
 .hero {
-  padding-top: clamp(48px, 5vw, 120px);
+  padding-top: clamp(32px, 3vw, 72px);
 }
 
 .hero__top {
@@ -438,9 +452,160 @@ ul {
   }
 }
 
+.projects__group {
+  flex-direction: column;
+  gap: clamp(32px, 3vw, 72px);
+  display: flex;
+}
+
+.projects__title {
+  color: #0a0a0a;
+  text-align: center;
+  letter-spacing: -.04em;
+  text-transform: uppercase;
+  font-family: Unbounded, sans-serif;
+  font-size: clamp(72px, 7vw, 160px);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.projects__cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(20px, 2vw, 40px);
+  display: grid;
+}
+
+.info-bar__text {
+  color: #2e2e2e;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Spline Sans Mono, monospace;
+  font-size: clamp(20px, 1.3vw, 28px);
+  font-weight: 400;
+}
+
+.project__card {
+  color: #fefefe;
+  aspect-ratio: 1.1;
+  background: #0a0a0a;
+  width: 100%;
+  padding: clamp(24px, 2.2vw, 56px);
+  text-decoration: none;
+  transition: all .45s;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.project__card:before {
+  content: "";
+  opacity: 0;
+  background: radial-gradient(circle at 80% 80%, #ffffff3f, #0000 65%);
+  transition: opacity .45s;
+  position: absolute;
+  inset: 0;
+}
+
+.project__card:hover:before {
+  opacity: 1;
+}
+
+.project__card:hover .project__card-arrow {
+  transform: rotate(45deg);
+}
+
+.project__card-header {
+  z-index: 5;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+  position: relative;
+}
+
+.project__card-title {
+  color: #fefefe;
+  text-align: left;
+  letter-spacing: -.04em;
+  text-transform: none;
+  font-family: Unbounded, sans-serif;
+  font-size: clamp(48px, 4vw, 88px);
+  font-weight: 500;
+  line-height: .9;
+}
+
+.project__card-arrow {
+  filter: brightness(0) invert();
+  width: clamp(48px, 4vw, 88px);
+  transition: all .45s;
+}
+
+.project__card-images {
+  height: 72%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.project__card-image {
+  transition: all .45s;
+  display: block;
+  position: absolute;
+}
+
+.project__card-image--main {
+  z-index: 2;
+  width: 73%;
+  left: -10%;
+  transform: rotate(-5deg);
+}
+
+.project__card-image--logo {
+  z-index: 1;
+  width: 73%;
+  top: 26%;
+  right: -10%;
+  transform: rotate(8deg);
+}
+
+.project__card:hover .project__card-image--main {
+  transform: rotate(-3deg)translateY(-6px);
+}
+
+.project__card:hover .project__card-image--logo {
+  transform: rotate(5deg)translateY(-10px);
+}
+
+@media (width <= 1024px) {
+  .projects__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .projects__title {
+    font-size: clamp(36px, 3vw, 68px);
+  }
+
+  .info-bar__text {
+    font-size: clamp(14px, .9vw, 18px);
+  }
+
+  .project__card-title {
+    font-size: clamp(32px, 2.2vw, 52px);
+  }
+
+  .project__card {
+    padding: clamp(16px, 1.5vw, 40px);
+  }
+}
+
 body {
   color: #0a0a0a;
   background-color: #fefefe;
-  padding: clamp(16px, 2.5vw, 32px);
+  padding: clamp(16px, 2.5vw, 32px) clamp(16px, 2.5vw, 32px) 0;
+}
+
+.divider {
+  height: clamp(128px, 10vw, 220px);
 }
 /*# sourceMappingURL=sokolstylz.ru.d01dfbe0.css.map */

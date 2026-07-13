@@ -32,12 +32,19 @@ navLinks.forEach(link => {
     });
 });
 
+const logo = document.querySelector(".logo-link");
 const logoImg = document.querySelector(".logo-link__group img");
+
+logo.addEventListener("click", () => {
+    // Если анимация уже идет — перезапускаем
+    logoImg.classList.remove("rotate");
+
+    // Форсируем перерасчет стилей
+    void logoImg.offsetWidth;
+
+    logoImg.classList.add("rotate");
+});
 
 logoImg.addEventListener("transitionend", () => {
     logoImg.classList.remove("rotate");
-});
-
-document.querySelector(".logo-link").addEventListener("click", () => {
-    logoImg.classList.add("rotate");
 });

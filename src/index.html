@@ -6,8 +6,8 @@
 		<title>Матвей Соколов</title>
 		<link rel="stylesheet" href="./assets/styles/index.scss" />
 	</head>
-	<body>
-		<header class="header" id="top">
+	<body id="top">
+		<header class="header">
 			<div class="header__wrapper">
 				<a class="logo-link" href="#top">
 					<div class="logo-link__group">
@@ -34,7 +34,7 @@
 					<ul class="header__list">
 						<!-- ПРОЕКТЫ -->
 						<li>
-							<a href="#" class="nav__link">
+							<a href="#projects" class="nav__link">
 								<span class="bracket left">[</span>
 
 								<span class="word">
@@ -135,15 +135,149 @@
 						</div>
 
 						<div class="hero__photo">
-							<img
-								class="hero__image"
-								src="./assets/images/myphoto.webp"
-								alt="Матвей Соколов"
-							/>
+							<picture>
+								<source
+									media="(max-width: 1024px)"
+									srcset="./assets/images/myphoto-mobile.webp"
+								/>
+
+								<img
+									class="hero__image"
+									src="./assets/images/myphoto.webp"
+									alt="Матвей Соколов"
+								/>
+							</picture>
 						</div>
 					</div>
 
 					<h1 class="hero__title hero__title--bottom">& РАЗРАБОТКА</h1>
+				</div>
+			</section>
+			<div class="divider"></div>
+			<section class="projects" id="projects">
+				<div class="projects__wrapper">
+					<div class="info-bar">
+						<p class="info-bar__text">02</p>
+						<p class="info-bar__text">проекты</p>
+						<p class="info-bar__text">2023-2026</p>
+					</div>
+					<div class="projects__group">
+						<h1 class="projects__title">дизайн</h1>
+						<div class="projects__cards">
+							<a href="#" class="project__card">
+								<div class="project__card-header">
+									<h3 class="project__card-title">
+										Orbitalis<br />
+										стартап
+									</h3>
+
+									<img
+										class="project__card-arrow"
+										src="./assets/images/arrow.svg"
+										alt="arrow"
+									/>
+								</div>
+
+								<div class="project__card-images">
+									<img
+										class="project__card-image project__card-image--main"
+										src="./assets/images/orbitalis-main.webp"
+										alt="orbitalis-main"
+									/>
+
+									<img
+										class="project__card-image project__card-image--logo"
+										src="./assets/images/orbitalis-logo.webp"
+										alt="orbitalis-logo"
+									/>
+								</div>
+							</a>
+							<a href="#" class="project__card">
+								<div class="project__card-header">
+									<h3 class="project__card-title">
+										Леший<br />
+										бренд
+									</h3>
+
+									<img
+										class="project__card-arrow"
+										src="./assets/images/arrow.svg"
+										alt="arrow"
+									/>
+								</div>
+
+								<div class="project__card-images">
+									<img
+										class="project__card-image project__card-image--main"
+										src="./assets/images/leshiy-main.webp"
+										alt="leshiy-main"
+									/>
+
+									<img
+										class="project__card-image project__card-image--logo"
+										src="./assets/images/leshiy-logo.webp"
+										alt="leshiy-logo"
+									/>
+								</div>
+							</a>
+							<a href="#" class="project__card">
+								<div class="project__card-header">
+									<h3 class="project__card-title">
+										Фриланс<br />
+										проекты
+									</h3>
+
+									<img
+										class="project__card-arrow"
+										src="./assets/images/arrow.svg"
+										alt=""
+									/>
+								</div>
+
+								<div class="project__card-images">
+									<img
+										class="project__card-image project__card-image--main"
+										src="./assets/images/freelance-main.webp"
+										alt="freelance-main"
+									/>
+
+									<img
+										class="project__card-image project__card-image--logo"
+										src="./assets/images/freelance-logo.webp"
+										alt="freelance-logo"
+									/>
+								</div>
+							</a>
+							<a href="#" class="project__card">
+								<div class="project__card-header">
+									<h3 class="project__card-title">
+										Личные<br />
+										проекты
+									</h3>
+
+									<img
+										class="project__card-arrow"
+										src="./assets/images/arrow.svg"
+										alt="arrow"
+									/>
+								</div>
+
+								<div class="project__card-images">
+									<img
+										class="project__card-image project__card-image--main"
+										src="./assets/images/myprojects-main.webp"
+										alt="myprojects-main"
+									/>
+
+									<img
+										class="project__card-image project__card-image--logo"
+										src="./assets/images/myprojects-logo.webp"
+										alt="myprojects-logo"
+									/>
+								</div>
+							</a>
+						</div>
+					</div>
 				</div>
 			</section>
 		</main>

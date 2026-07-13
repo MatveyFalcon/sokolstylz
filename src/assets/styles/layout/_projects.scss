@@ -1,0 +1,164 @@
+.projects {
+	&__wrapper {
+		@extend %container;
+	}
+	&__group {
+		display: flex;
+		flex-direction: column;
+		gap: $gap-lg;
+	}
+	&__title {
+		@include h2();
+	}
+	&__cards {
+		display: grid;
+
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		gap: clamp(20px, 2vw, 40px);
+
+		align-items: stretch;
+	}
+}
+
+.info-bar {
+	@extend %info-bar;
+	&__text {
+		@include p();
+	}
+}
+
+.project {
+	&__card {
+		position: relative;
+		display: block;
+
+		padding: $gap-xl-sm;
+
+		background: $black;
+		color: $white;
+
+		overflow: hidden;
+		text-decoration: none;
+
+		width: 100%;
+		aspect-ratio: 1.1;
+
+		transition: 0.45s;
+
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+
+			background: radial-gradient(
+				circle at 80% 80%,
+				rgba(255, 255, 255, 0.247),
+				transparent 65%
+			);
+
+			opacity: 0;
+			transition: opacity 0.45s;
+		}
+
+		&:hover::before {
+			opacity: 1;
+		}
+
+		&:hover .project__card-arrow {
+			transform: rotate(45deg);
+		}
+	}
+
+	&__card-header {
+		position: relative;
+		z-index: 5;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	&__card-title {
+		@include h2($color: $white, $align: left, $transform: none);
+
+		font-size: $fs-xl;
+		line-height: 0.9;
+	}
+
+	&__card-arrow {
+		width: $fs-xl;
+		transition: 0.45s;
+		filter: brightness(0) invert(1);
+	}
+
+	&__card-images {
+		position: absolute;
+
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		height: 72%;
+	}
+
+	&__card-image {
+		position: absolute;
+		display: block;
+		transition: 0.45s;
+	}
+
+	&__card-image--main {
+		width: 73%;
+
+		left: -10%;
+
+		transform: rotate(-5deg);
+
+		z-index: 2;
+	}
+
+	&__card-image--logo {
+		width: 73%;
+
+		right: -10%;
+		top: 26%;
+
+		transform: rotate(8deg);
+
+		z-index: 1;
+	}
+
+	&__card:hover &__card-image--main {
+		transform: rotate(-3deg) translateY(-6px);
+	}
+
+	&__card:hover &__card-image--logo {
+		transform: rotate(5deg) translateY(-10px);
+	}
+}
+
+@include mobile {
+	.projects {
+		&__cards {
+			grid-template-columns: 1fr;
+		}
+		&__title {
+			font-size: $fs-xl-sm;
+		}
+	}
+	.info-bar {
+		&__text {
+			font-size: $fs-sm;
+		}
+	}
+
+	.project {
+		&__card-title {
+			font-size: $fs-lg;
+		}
+		&__card {
+			padding: $gap-md;
+		}
+	}
+}

@@ -15,7 +15,7 @@
 	}
 
 	&__list a {
-		color: #2e2e2e;
+		color: $grey;
 		font-size: $fs-base;
 		line-height: 1.2em;
 	}
@@ -46,6 +46,15 @@
 		width: 1.2em;
 		height: 1.2em;
 		transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+	}
+	&__group img.rotate {
+		transform: rotate(360deg);
+	}
+}
+
+@media (hover: hover) {
+	.logo-link:hover .logo-link__group img:not(.rotate) {
+		transform: rotate(90deg);
 	}
 }
 
@@ -189,10 +198,6 @@
 
 .btn-icon:hover .btn-icon__img {
 	transform: rotate(45deg);
-}
-
-.logo-link__group img.rotate {
-	transform: rotate(90deg);
 }
 
 @include mobile {
