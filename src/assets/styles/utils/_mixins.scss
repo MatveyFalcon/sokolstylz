@@ -35,6 +35,15 @@
 	text-transform: $transform;
 }
 
+@mixin title-faq($color: $black, $align: left) {
+	color: $color;
+	font-size: $fs-xl-sm;
+	text-align: $align;
+	line-height: 1;
+	font-weight: 500;
+	font-family: $font-title;
+}
+
 %container {
 	max-width: 192rem;
 	margin: 0 auto;

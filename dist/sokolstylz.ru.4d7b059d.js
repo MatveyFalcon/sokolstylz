@@ -750,6 +750,17 @@ logo.addEventListener("click", ()=>{
 logoImg.addEventListener("transitionend", ()=>{
     logoImg.classList.remove("rotate");
 });
+const experienceItems = document.querySelectorAll(".works__item");
+experienceItems.forEach((item)=>{
+    const button = item.querySelector(".works__button");
+    button.addEventListener("click", ()=>{
+        const isActive = item.classList.contains("active");
+        experienceItems.forEach((el)=>{
+            el.classList.remove("active");
+        });
+        if (!isActive) item.classList.add("active");
+    });
+});
 
 },{}]},["cTwxK","7yfa3"], "7yfa3", "parcelRequiref99c", {})
 

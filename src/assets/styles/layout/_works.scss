@@ -1,0 +1,79 @@
+.works {
+	&__wrapper {
+		@extend %container;
+	}
+
+	&__title {
+		@include h2;
+		margin-bottom: $gap-lg;
+
+		&:nth-of-type(2) {
+			margin-top: $gap-lg;
+		}
+	}
+
+	&__list {
+		border-top: 1px solid $lightGrey;
+	}
+
+	&__item {
+		border-bottom: 1px solid $lightGrey;
+	}
+
+	&__button {
+		width: 100%;
+
+		padding: $gap-lg 0 $gap-xl-sm 0;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		background: none;
+		border: none;
+
+		cursor: pointer;
+
+		text-align: left;
+	}
+
+	&__company {
+		@include title-faq();
+	}
+
+	&__icon {
+		width: $fs-lg;
+		height: $fs-lg;
+		flex-shrink: 0;
+		transition: transform 0.35s cubic-bezier(0.77, 0, 0.18, 1);
+	}
+
+	&__content {
+		display: grid;
+		grid-template-rows: 0fr;
+
+		transition: grid-template-rows 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+	}
+
+	&__body {
+		overflow: hidden;
+	}
+
+	&__text {
+		@include p($align: left, $transform: none);
+
+		max-width: 720px;
+
+		padding-bottom: $gap-lg;
+	}
+
+	&__item.active {
+		.works__content {
+			grid-template-rows: 1fr;
+		}
+
+		.works__icon {
+			transform: rotate(45deg);
+		}
+	}
+}
