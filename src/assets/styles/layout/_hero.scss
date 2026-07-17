@@ -92,19 +92,9 @@
 			gap: $gap-xs;
 		}
 
-		&__subtitle {
-			font-size: $fs-sm;
-		}
-
-		&__title {
-			line-height: 0.9;
-			font-size: $fs-xl-sm;
-		}
-
 		&__title--bottom {
-			margin-top: $gap-sm;
+			margin-top: $gap-md;
 			text-align: right;
-			font-size: $fs-xl-sm;
 		}
 	}
 }

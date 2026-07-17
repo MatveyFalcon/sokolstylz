@@ -13,6 +13,10 @@
 	font-family: $font-title;
 	letter-spacing: -0.04em;
 	text-transform: $transform;
+	@include mobile {
+		font-size: $fs-xl-sm;
+		letter-spacing: -0.04em;
+	}
 }
 
 @mixin h3($color: $black, $align: center, $transform: uppercase) {
@@ -24,6 +28,10 @@
 	font-family: $font-main;
 	letter-spacing: 0.52em;
 	text-transform: $transform;
+	@include mobile {
+		font-size: $fs-sm;
+		letter-spacing: 0.18em;
+	}
 }
 
 @mixin p($color: $grey, $align: center, $transform: uppercase) {
@@ -33,6 +41,9 @@
 	font-weight: 400;
 	font-family: $font-main;
 	text-transform: $transform;
+	@include mobile {
+		font-size: $fs-sm;
+	}
 }
 
 @mixin title-faq($color: $black, $align: left) {
@@ -42,6 +53,21 @@
 	line-height: 1;
 	font-weight: 500;
 	font-family: $font-title;
+	@include mobile {
+		font-size: $fs-md;
+	}
+}
+
+@mixin title-card($color: $black, $align: left) {
+	color: $color;
+	font-size: $fs-xl;
+	text-align: $align;
+	line-height: 0.9;
+	font-weight: 500;
+	font-family: $font-title;
+	@include mobile {
+		font-size: $fs-xl-sm;
+	}
 }
 
 %container {
@@ -55,6 +81,10 @@
 	font-size: $fs-md;
 	line-height: 1.2em;
 	padding-bottom: 0.1em;
+	text-transform: uppercase;
+	@include mobile {
+		font-size: $fs-base;
+	}
 }
 
 %info-bar {

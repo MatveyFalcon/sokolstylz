@@ -7,7 +7,7 @@
 		@include h2;
 		margin-bottom: $gap-lg;
 
-		&:nth-of-type(2) {
+		&:nth-of-type(n + 2) {
 			margin-top: $gap-lg;
 		}
 	}
@@ -23,7 +23,7 @@
 	&__button {
 		width: 100%;
 
-		padding: $gap-lg 0 $gap-xl-sm 0;
+		padding: $fs-base 0 $fs-base 0;
 
 		display: flex;
 		justify-content: space-between;
@@ -64,7 +64,7 @@
 
 		max-width: 720px;
 
-		padding-bottom: $gap-lg;
+		padding-bottom: $fs-base;
 	}
 
 	&__item.active {
@@ -76,4 +76,8 @@
 			transform: rotate(45deg);
 		}
 	}
+}
+
+.btn-icon--faq {
+	margin-bottom: $fs-base;
 }

@@ -4,10 +4,10 @@ $font-title: "Unbounded", sans-serif;
 
 // font sizes
 $fs-sm: clamp(14px, 0.9vw, 18px); //subtitle and text mobile
-$fs-base: clamp(20px, 1.3vw, 28px);
-$fs-md: clamp(24px, 1.6vw, 36px);
+$fs-base: clamp(20px, 1.3vw, 28px); //button mobile
+$fs-md: clamp(24px, 1.6vw, 36px); //title mobile h3
 $fs-lg: clamp(32px, 2.2vw, 52px);
-$fs-xl-sm: clamp(36px, 3vw, 68px); //title mobile
+$fs-xl-sm: clamp(36px, 3vw, 68px); //title mobile h2
 $fs-xl: clamp(48px, 4vw, 88px);
 $fs-hero: clamp(72px, 7vw, 160px);
 

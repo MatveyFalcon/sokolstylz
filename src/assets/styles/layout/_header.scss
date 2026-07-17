@@ -65,7 +65,7 @@
 
 .btn-icon {
 	&__group {
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		gap: $gap-xs;
 	}
@@ -180,10 +180,6 @@
 	transition: background-size 0.4s;
 }
 
-.btn:hover {
-	background-size: 100% 2px;
-}
-
 .btn-icon {
 	background-image: linear-gradient(currentColor, currentColor);
 	background-repeat: no-repeat;
@@ -192,12 +188,18 @@
 	transition: background-size 0.4s cubic-bezier(0.77, 0, 0.18, 1);
 }
 
-.btn-icon:hover {
-	background-size: 0 2px;
-}
+@media (hover: hover) {
+	.btn:hover {
+		background-size: 100% 2px;
+	}
 
-.btn-icon:hover .btn-icon__img {
-	transform: rotate(45deg);
+	.btn-icon:hover {
+		background-size: 0 2px;
+	}
+
+	.btn-icon:hover .btn-icon__img {
+		transform: rotate(45deg);
+	}
 }
 
 @include mobile {

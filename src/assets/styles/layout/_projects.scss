@@ -72,14 +72,7 @@
 	}
 
 	&__card-title {
-		@include h2($color: $white, $align: left, $transform: none);
-
-		font-size: $fs-xl;
-		line-height: 0.9;
-	}
-
-	&__card-title--wide {
-		line-height: 1.1;
+		@include title-card($color: $white);
 	}
 
 	&__card-arrow {
@@ -163,9 +156,6 @@
 		&__cards {
 			grid-template-columns: 1fr;
 		}
-		&__title {
-			font-size: $fs-xl-sm;
-		}
 	}
 	.info-bar {
 		&__text {
@@ -174,9 +164,6 @@
 	}
 
 	.project {
-		&__card-title {
-			font-size: $fs-lg;
-		}
 		&__card {
 			padding: $gap-md;
 		}
