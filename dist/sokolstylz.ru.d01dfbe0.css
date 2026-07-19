@@ -42,7 +42,7 @@ ul {
   list-style: none;
 }
 
-.about__wrapper, .works__wrapper, .projects__wrapper, .hero__wrapper, .header__wrapper {
+.contacts__wrapper, .about__wrapper, .works__wrapper, .projects__wrapper, .hero__wrapper, .header__wrapper {
   max-width: 192rem;
   margin: 0 auto;
 }
@@ -877,6 +877,68 @@ ul {
 
   .about__group-1 > .about__text:last-child {
     grid-area: 3 / 1 / auto / -1;
+  }
+}
+
+.contacts__info {
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(32px, 2.2vw, 52px);
+  display: flex;
+}
+
+.contacts__info-image {
+  width: clamp(48px, 4vw, 88px);
+  height: clamp(48px, 4vw, 88px);
+}
+
+.contacts__title {
+  color: #0a0a0a;
+  text-align: center;
+  font-family: Unbounded, sans-serif;
+  font-size: clamp(36px, 3vw, 68px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+@media (width <= 1024px) {
+  .contacts__title {
+    font-size: clamp(24px, 1.6vw, 36px);
+  }
+}
+
+.contacts__text {
+  color: #2e2e2e;
+  text-align: center;
+  text-transform: none;
+  font-family: Spline Sans Mono, monospace;
+  font-size: clamp(20px, 1.3vw, 28px);
+  font-weight: 400;
+}
+
+@media (width <= 1024px) {
+  .contacts__text {
+    font-size: clamp(14px, .9vw, 18px);
+  }
+}
+
+.contacts__text {
+  width: clamp(620px, 30vw, 1000px);
+}
+
+.contacts__links {
+  flex-direction: row;
+  gap: clamp(32px, 2.2vw, 52px);
+  display: flex;
+}
+
+@media (width <= 1024px) {
+  .contacts__title, .contacts__text {
+    width: 30rem;
+  }
+
+  .contacts__links {
+    gap: clamp(24px, 1.6vw, 36px);
   }
 }
 

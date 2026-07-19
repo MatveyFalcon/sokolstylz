@@ -1,0 +1,46 @@
+.contacts {
+	&__wrapper {
+		@extend %container;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: $fs-lg;
+		align-items: center;
+	}
+
+	&__info-image {
+		width: $fs-xl;
+		height: $fs-xl;
+	}
+
+	&__title {
+		@include title-faq($align: center);
+	}
+
+	&__text {
+		@include p($transform: none);
+		width: $width-xl;
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: row;
+		gap: $fs-lg;
+	}
+}
+
+@include mobile {
+	.contacts {
+		&__title {
+			width: 30rem;
+		}
+		&__text {
+			width: 30rem;
+		}
+		&__links {
+			gap: $fs-md;
+		}
+	}
+}
