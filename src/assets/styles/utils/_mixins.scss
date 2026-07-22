@@ -50,11 +50,11 @@
 	color: $color;
 	font-size: $fs-xl-sm;
 	text-align: $align;
-	line-height: 1;
-	font-weight: 500;
+	line-height: 1.1;
+	font-weight: 400;
 	font-family: $font-title;
 	@include mobile {
-		font-size: $fs-md;
+		font-size: $fs-base;
 	}
 }
 
@@ -66,13 +66,14 @@
 	font-weight: 500;
 	font-family: $font-title;
 	@include mobile {
-		font-size: $fs-xl-sm;
+		font-size: $fs-lg;
 	}
 }
 
 %container {
 	max-width: 192rem;
 	margin: 0 auto;
+	padding-inline: clamp(16px, 2.5vw, 32px);
 }
 
 %btn {

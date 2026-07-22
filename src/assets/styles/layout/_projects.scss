@@ -78,7 +78,6 @@
 	&__card-arrow {
 		width: $fs-xl;
 		transition: 0.45s;
-		filter: brightness(0) invert(1);
 	}
 
 	&__card-images {
@@ -121,6 +120,7 @@
 	&__card--wide {
 		width: 100%;
 		aspect-ratio: 2.1;
+		margin-top: $gap-lg-md;
 
 		.project__card-image--desktop {
 			width: 46%;

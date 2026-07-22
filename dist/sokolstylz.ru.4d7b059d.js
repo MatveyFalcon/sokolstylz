@@ -761,6 +761,37 @@ experienceItems.forEach((item)=>{
         if (!isActive) item.classList.add("active");
     });
 });
+const header = document.querySelector(".header");
+window.addEventListener("scroll", ()=>{
+    if (window.scrollY > 40) header.classList.add("scrolled");
+    else header.classList.remove("scrolled");
+});
+const navLinksSmooth = document.querySelectorAll('a[href^="#"]');
+function smoothScrollTo(targetY, duration = 1400) {
+    const startY = window.pageYOffset;
+    const distance = targetY - startY;
+    const startTime = performance.now();
+    function ease(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+    function animate(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        window.scrollTo(0, startY + distance * ease(progress));
+        if (progress < 1) requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+}
+navLinksSmooth.forEach((link)=>{
+    link.addEventListener("click", (e)=>{
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute("href"));
+        if (!target) return;
+        const offset = 120; // смещение сверху
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        smoothScrollTo(top);
+    });
+});
 
 },{}]},["cTwxK","7yfa3"], "7yfa3", "parcelRequiref99c", {})
 

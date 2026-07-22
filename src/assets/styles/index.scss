@@ -5,8 +5,7 @@
 body {
 	background-color: $white;
 	color: $black;
-	padding: clamp(16px, 2.5vw, 32px) clamp(16px, 2.5vw, 32px) 0
-		clamp(16px, 2.5vw, 32px);
+	padding-top: $gap-xl;
 }
 
 .divider {

@@ -3,6 +3,13 @@
 		@extend %container;
 	}
 
+	&__group {
+		display: flex;
+		flex-direction: column;
+		gap: $fs-sm;
+		align-items: center;
+	}
+
 	&__info {
 		display: flex;
 		flex-direction: column;
@@ -28,6 +35,8 @@
 		display: flex;
 		flex-direction: row;
 		gap: $fs-lg;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 }
 

@@ -8,7 +8,7 @@
 		margin-bottom: $gap-lg;
 
 		&:nth-of-type(n + 2) {
-			margin-top: $gap-lg;
+			margin-top: $gap-xl;
 		}
 	}
 
@@ -80,4 +80,10 @@
 
 .btn-icon--faq {
 	margin-bottom: $fs-base;
+}
+
+@include mobile {
+	.works__icon {
+		margin-left: 16px;
+	}
 }

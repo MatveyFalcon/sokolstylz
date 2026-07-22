@@ -1,12 +1,29 @@
 .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	z-index: 1000;
+
+	transition: padding 0.35s ease;
+
 	&__wrapper {
 		@extend %container;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-	}
 
-	position: relative;
+		padding: clamp(20px, 1.6vw, 26px) clamp(20px, 2vw, 32px);
+
+		transition:
+			background-color 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+			backdrop-filter 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+			box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+			border-radius 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+			padding 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+			transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+	}
 	&__list {
 		display: flex;
 		align-items: center;
@@ -214,7 +231,12 @@
 
 	.nav {
 		position: fixed;
-		inset: 0;
+
+		top: 0;
+		left: 0;
+
+		width: 100vw;
+		height: 100dvh;
 
 		display: flex;
 		flex-direction: column;
@@ -283,5 +305,41 @@
 		.logo-link img {
 			filter: brightness(0) invert(1);
 		}
+	}
+}
+
+.header.scrolled {
+	padding-top: clamp(16px, 2.5vw, 32px);
+	padding-bottom: clamp(16px, 2.5vw, 32px);
+}
+
+.header.scrolled .header__wrapper {
+	background: rgba(255, 255, 255, 0.55);
+
+	backdrop-filter: blur(24px) saturate(180%);
+
+	border-radius: 999px;
+
+	box-shadow:
+		0 1px 0 rgba(255, 255, 255, 0.7) inset,
+		0 12px 40px rgba(15, 23, 42, 0.08);
+}
+
+@include mobile {
+	.header.scrolled {
+		background: rgba(255, 255, 255, 0.55);
+		backdrop-filter: blur(24px);
+
+		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+	}
+
+	.header.scrolled .header__wrapper {
+		background: transparent;
+		backdrop-filter: none;
+
+		border: none;
+		border-radius: 0;
+
+		box-shadow: none;
 	}
 }
