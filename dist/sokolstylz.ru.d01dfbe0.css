@@ -465,7 +465,7 @@ ul {
 
 .hero__title--bottom {
   text-align: right;
-  margin-top: clamp(32px, 3vw, 72px);
+  margin-top: clamp(24px, 2.2vw, 56px);
   display: block;
 }
 

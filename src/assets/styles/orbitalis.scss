@@ -1,0 +1,13 @@
+@import "./utils";
+@import "./components";
+@import "./layout/orbitalis/";
+
+body {
+	background-color: $white;
+	color: $black;
+	padding-top: $gap-xl;
+}
+
+.divider {
+	height: $gap-4xl;
+}

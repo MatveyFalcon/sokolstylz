@@ -1,0 +1,30 @@
+.hero {
+	&__wrapper {
+		@extend %container;
+	}
+
+	padding-top: $gap-xl;
+
+	&__group {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	&__group-text {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		margin-bottom: $fs-lg;
+		@include title-faq();
+		&:nth-of-type(n + 2) {
+			margin-top: $fs-xl;
+		}
+	}
+
+	&__text {
+		@include p($align: left, $transform: none);
+	}
+}
