@@ -62,7 +62,7 @@
 	&__text {
 		@include p($align: left, $transform: none);
 
-		max-width: 720px;
+		width: clamp(920px, 55vw, 1320px);
 
 		padding-bottom: $fs-base;
 	}
@@ -83,7 +83,17 @@
 }
 
 @include mobile {
-	.works__icon {
-		margin-left: 16px;
+	.works {
+		&__icon {
+			margin-left: 16px;
+		}
+		&__text {
+			max-width: 100%;
+		}
+	}
+	.info-bar {
+		&__text {
+			font-size: $fs-sm;
+		}
 	}
 }

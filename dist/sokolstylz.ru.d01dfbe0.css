@@ -820,7 +820,7 @@ ul {
 }
 
 .works__text {
-  max-width: 720px;
+  width: clamp(920px, 55vw, 1320px);
   padding-bottom: clamp(20px, 1.3vw, 28px);
 }
 
@@ -839,6 +839,14 @@ ul {
 @media (width <= 1024px) {
   .works__icon {
     margin-left: 16px;
+  }
+
+  .works__text {
+    max-width: 100%;
+  }
+
+  .info-bar__text {
+    font-size: clamp(14px, .9vw, 18px);
   }
 }
 
@@ -922,6 +930,10 @@ ul {
 
   .about__group-1 > .about__text:last-child {
     grid-area: 3 / 1 / auto / -1;
+  }
+
+  .info-bar__text {
+    font-size: clamp(14px, .9vw, 18px);
   }
 }
 
