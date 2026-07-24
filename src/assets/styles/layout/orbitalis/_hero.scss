@@ -7,24 +7,70 @@
 
 	&__group {
 		display: flex;
-		flex-direction: row;
+		align-items: center;
 		justify-content: space-between;
+		gap: $gap-4xl;
 	}
 
 	&__group-text {
 		display: flex;
 		flex-direction: column;
+		flex: 0 1 clamp(620px, 38vw, 820px);
+		&:nth-of-type(n + 2) {
+			margin-top: $fs-xl;
+			width: clamp(920px, 55vw, 1320px);
+		}
 	}
 
 	&__title {
 		margin-bottom: $fs-lg;
 		@include title-faq();
-		&:nth-of-type(n + 2) {
-			margin-top: $fs-xl;
-		}
 	}
 
 	&__text {
 		@include p($align: left, $transform: none);
+	}
+
+	&__image {
+		flex: 1;
+
+		width: clamp(420px, 45vw, 920px);
+
+		height: auto;
+
+		object-fit: contain;
+
+		display: block;
+	}
+}
+
+@include mobile {
+	.hero {
+		&__title {
+			margin-bottom: $fs-base;
+		}
+		&__group {
+			flex-direction: column;
+			align-items: stretch;
+			gap: $fs-lg;
+		}
+		&__group-text {
+			flex: none;
+			width: 100%;
+			max-width: none;
+
+			&:nth-of-type(n + 2) {
+				margin-top: $fs-xl;
+				width: 100%;
+			}
+		}
+		&__image {
+			width: 100%;
+			max-width: 520px;
+			align-self: center;
+		}
+		&__title {
+			margin-bottom: $fs-base;
+		}
 	}
 }

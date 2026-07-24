@@ -986,6 +986,10 @@ ul {
 }
 
 @media (width <= 1024px) {
+  .contacts__info {
+    gap: clamp(20px, 1.3vw, 28px);
+  }
+
   .contacts__title, .contacts__text {
     width: 30rem;
   }

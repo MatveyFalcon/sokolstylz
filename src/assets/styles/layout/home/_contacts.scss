@@ -42,6 +42,9 @@
 
 @include mobile {
 	.contacts {
+		&__info {
+			gap: $fs-base;
+		}
 		&__title {
 			width: 30rem;
 		}
