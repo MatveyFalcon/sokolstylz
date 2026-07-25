@@ -177,7 +177,7 @@
 
   // Only insert newRequire.load when it is actually used.
   // The code in this file is linted against ES5, so dynamic import is not allowed.
-  // INSERT_LOAD_HERE
+  function $parcel$resolve(url) {  url = importMap[url] || url;  return import.meta.resolve(distDir + url);}newRequire.resolve = $parcel$resolve;
 
   Object.defineProperty(newRequire, 'root', {
     get: function () {
@@ -730,7 +730,176 @@ experienceItems.forEach((item)=>{
         if (!isActive) item.classList.add("active");
     });
 });
+const slider = document.querySelector(".slider");
+if (slider) {
+    const image = slider.querySelector(".slider__image");
+    const prevButton = slider.querySelector(".slider__button--prev");
+    const nextButton = slider.querySelector(".slider__button--next");
+    const current = slider.querySelector(".slider__current");
+    const total = slider.querySelector(".slider__total");
+    const images = [
+        new URL(require("e32ff179b3abc266")).href,
+        new URL(require("e0f23a42264424ff")).href,
+        new URL(require("e903f73ac19c44f4")).href,
+        new URL(require("55bf882da60f05e5")).href,
+        new URL(require("75e5a718158a6621")).href,
+        new URL(require("e5c48e651a81c062")).href,
+        new URL(require("ba1684a0f95dd860")).href,
+        new URL(require("26374fd935698f78")).href,
+        new URL(require("b414ad48e08f10ad")).href,
+        new URL(require("7af4c2597ac0e0a6")).href,
+        new URL(require("4af8d636e718a027")).href,
+        new URL(require("d9a037c9547f767c")).href
+    ];
+    console.log(images);
+    let currentIndex = 0;
+    let animationId = 0;
+    image.src = images[0];
+    total.textContent = String(images.length).padStart(2, "0");
+    updateCounter();
+    preloadImages();
+    function updateCounter() {
+        current.textContent = String(currentIndex + 1).padStart(2, "0");
+    }
+    function preloadImages() {
+        const nextIndex = (currentIndex + 1) % images.length;
+        const prevIndex = (currentIndex - 1 + images.length) % images.length;
+        const next = new Image();
+        next.src = images[nextIndex];
+        const prev = new Image();
+        prev.src = images[prevIndex];
+    }
+    function changeSlide(direction) {
+        animationId++;
+        const currentAnimation = animationId;
+        image.classList.remove("fade-in");
+        image.classList.add("fade-out");
+        setTimeout(()=>{
+            if (currentAnimation !== animationId) return;
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            image.src = images[currentIndex];
+            updateCounter();
+            preloadImages();
+            image.classList.remove("fade-out");
+            image.classList.add("fade-in");
+            setTimeout(()=>{
+                if (currentAnimation !== animationId) return;
+                image.classList.remove("fade-in");
+            }, 200);
+        }, 100);
+    }
+    prevButton.addEventListener("click", ()=>changeSlide(-1));
+    nextButton.addEventListener("click", ()=>changeSlide(1));
+    document.addEventListener("keydown", (event)=>{
+        if (event.key === "ArrowLeft") changeSlide(-1);
+        if (event.key === "ArrowRight") changeSlide(1);
+    });
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let isPointerDown = false;
+    const DRAG_DISTANCE = 90;
+    function pointerDown(x) {
+        startX = x;
+        currentX = x;
+        isPointerDown = true;
+        isDragging = false;
+    }
+    function pointerMove(x) {
+        if (!isPointerDown) return;
+        currentX = x;
+        const delta = currentX - startX;
+        if (Math.abs(delta) > 12) isDragging = true;
+    }
+    function pointerUp() {
+        if (!isPointerDown) return;
+        const delta = currentX - startX;
+        if (isDragging && Math.abs(delta) > DRAG_DISTANCE) changeSlide(delta < 0 ? 1 : -1);
+        isPointerDown = false;
+        isDragging = false;
+    }
+    image.addEventListener("mousedown", (event)=>{
+        event.preventDefault();
+        pointerDown(event.clientX);
+    });
+    window.addEventListener("mousemove", (event)=>{
+        pointerMove(event.clientX);
+    });
+    window.addEventListener("mouseup", ()=>{
+        pointerUp();
+    });
+    image.addEventListener("touchstart", (event)=>{
+        if (event.touches.length !== 1 || window.visualViewport.scale > 1) return;
+        pointerDown(event.touches[0].clientX);
+    }, {
+        passive: true
+    });
+    image.addEventListener("touchmove", (event)=>{
+        if (event.touches.length !== 1 || window.visualViewport.scale > 1) return;
+        pointerMove(event.touches[0].clientX);
+    }, {
+        passive: true
+    });
+    image.addEventListener("touchend", ()=>{
+        pointerUp();
+    }, {
+        passive: true
+    });
+}
+const footer = document.querySelector(".footer");
+// Только устройства с сенсорным экраном (iPhone, Android, iPad)
+const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+if (footer && isTouchDevice) {
+    function updateBackground() {
+        const rect = footer.getBoundingClientRect();
+        // Если верх футера находится в пределах экрана,
+        // делаем фон body черным.
+        const isFooterVisible = rect.top < window.innerHeight;
+        document.body.classList.toggle("footer-visible", isFooterVisible);
+    }
+    window.addEventListener("scroll", updateBackground, {
+        passive: true
+    });
+    window.addEventListener("resize", updateBackground);
+    updateBackground();
+}
 
-},{}]},["AsQyU","5adSc"], "5adSc", "parcelRequiref99c", {})
+},{"e32ff179b3abc266":"5RwOI","e0f23a42264424ff":"4EiLO","e903f73ac19c44f4":"gYleH","55bf882da60f05e5":"7Bg7T","75e5a718158a6621":"2ncIy","e5c48e651a81c062":"dDejb","ba1684a0f95dd860":"64Jn8","26374fd935698f78":"yFqbc","b414ad48e08f10ad":"8TasB","7af4c2597ac0e0a6":"cCSRX","4af8d636e718a027":"8SBDZ","d9a037c9547f767c":"lAX4K"}],"5RwOI":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("screen-01.99076b46.webp") + "?" + Date.now();
+
+},{}],"4EiLO":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("screen-02.ff6bb425.webp") + "?" + Date.now();
+
+},{}],"gYleH":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("screen-03.f61902aa.webp") + "?" + Date.now();
+
+},{}],"7Bg7T":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("screen-04.dec09868.webp") + "?" + Date.now();
+
+},{}],"2ncIy":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("screen-05.cbb59ec7.webp") + "?" + Date.now();
+
+},{}],"dDejb":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("screen-06.8638e1a2.webp") + "?" + Date.now();
+
+},{}],"64Jn8":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("screen-07.c17a85a1.webp") + "?" + Date.now();
+
+},{}],"yFqbc":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("screen-08.6fa9d057.webp") + "?" + Date.now();
+
+},{}],"8TasB":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("screen-09.0cc318d1.webp") + "?" + Date.now();
+
+},{}],"cCSRX":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("screen-10.f3f1c6b5.webp") + "?" + Date.now();
+
+},{}],"8SBDZ":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("screen-11.298b2233.webp") + "?" + Date.now();
+
+},{}],"lAX4K":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("screen-12.2d890199.webp") + "?" + Date.now();
+
+},{}]},["AsQyU","5adSc"], "5adSc", "parcelRequiref99c", {}, "./", "/")
 
 //# sourceMappingURL=orbitalis.1b911504.js.map

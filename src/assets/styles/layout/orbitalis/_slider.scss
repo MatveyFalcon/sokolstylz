@@ -1,0 +1,119 @@
+.slider {
+	&__wrapper {
+		@extend %container;
+	}
+
+	&__viewport {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__image {
+		display: block;
+
+		width: 100%;
+		height: auto;
+
+		object-fit: contain;
+
+		transition:
+			opacity 0.35s ease,
+			transform 0.35s ease;
+	}
+
+	&__image.fade-out {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+
+	&__image.fade-in {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	&__controls {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		gap: $fs-lg;
+
+		margin-top: $fs-lg;
+	}
+
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		user-select: none;
+		padding: 12px;
+
+		background: transparent;
+		border: none;
+
+		cursor: pointer;
+
+		transition:
+			transform 0.35s ease,
+			opacity 0.35s ease;
+
+		img {
+			display: block;
+
+			width: $fs-xl;
+			height: $fs-xl;
+
+			transition: transform 0.35s ease;
+		}
+
+		&:hover {
+			opacity: 0.65;
+		}
+	}
+
+	&__button--prev {
+		&:hover img {
+			transform: translateX(-6px);
+		}
+	}
+
+	&__button--next {
+		img {
+			transform: rotate(180deg);
+		}
+
+		&:hover img {
+			transform: rotate(180deg) translateX(-6px);
+		}
+	}
+
+	&__counter {
+		display: flex;
+		align-items: center;
+		gap: $gap-xs;
+
+		@include title-faq($align: center);
+
+		user-select: none;
+	}
+
+	&__current,
+	&__total {
+		min-width: 2ch;
+		text-align: center;
+	}
+}
+
+@include mobile {
+	.slider {
+		&__button {
+			padding: 8px;
+		}
+	}
+	.info-bar {
+		&__text {
+			font-size: $fs-sm;
+		}
+	}
+}
