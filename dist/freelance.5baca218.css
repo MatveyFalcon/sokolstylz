@@ -42,7 +42,7 @@ ul {
   list-style: none;
 }
 
-.works__wrapper, .hero__wrapper, .header__wrapper {
+.myworks__wrapper, .works__wrapper, .hero__wrapper, .header__wrapper {
   max-width: 192rem;
   margin: 0 auto;
   padding-inline: clamp(16px, 2.5vw, 32px);
@@ -399,6 +399,103 @@ ul {
 
   .works__text {
     max-width: 100%;
+  }
+
+  .info-bar__text {
+    font-size: clamp(14px, .9vw, 18px);
+  }
+}
+
+.myworks__grid {
+  grid-template-columns: .95fr .95fr 2fr;
+  grid-template-areas: "one two three"
+                       "left left right";
+  align-items: start;
+  column-gap: clamp(20px, 2vw, 40px);
+  display: grid;
+}
+
+@media (width <= 1024px) {
+  .myworks__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "three three"
+                         "one two";
+    gap: clamp(16px, 1.5vw, 40px);
+  }
+}
+
+.myworks__image {
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+
+.myworks__image--1 {
+  grid-area: one;
+}
+
+.myworks__image--2 {
+  grid-area: two;
+}
+
+.myworks__image--3 {
+  grid-area: three;
+}
+
+.myworks__title {
+  color: #0a0a0a;
+  text-align: center;
+  letter-spacing: -.04em;
+  text-transform: uppercase;
+  font-family: Unbounded, sans-serif;
+  font-size: clamp(72px, 7vw, 160px);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@media (width <= 1024px) {
+  .myworks__title {
+    letter-spacing: -.04em;
+    font-size: clamp(36px, 3vw, 68px);
+  }
+}
+
+.myworks__title {
+  white-space: nowrap;
+  line-height: .6;
+}
+
+.myworks__title--left {
+  text-align: left;
+}
+
+@media (width <= 1024px) {
+  .myworks__title--left {
+    text-align: right;
+  }
+}
+
+.myworks__title--right {
+  text-align: right;
+}
+
+@media (width <= 1024px) {
+  .myworks__title--right {
+    text-align: left;
+  }
+}
+
+.myworks__group-text {
+  flex-direction: column;
+  gap: clamp(24px, 2.2vw, 56px);
+  margin-top: clamp(24px, 2.2vw, 56px);
+  display: flex;
+}
+
+@media (width <= 1024px) {
+  .myworks__group-text {
+    gap: clamp(16px, 1.5vw, 40px);
+    margin-top: clamp(20px, 2vw, 40px);
   }
 
   .info-bar__text {
