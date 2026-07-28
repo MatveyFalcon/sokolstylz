@@ -1,0 +1,34 @@
+@import "./utils";
+@import "./components";
+@import "./layout/freelance/";
+
+html {
+	background: $black;
+}
+
+body {
+	background-color: $white;
+	color: $black;
+	padding-top: $gap-xl;
+	transition: background-color 0.35s ease;
+}
+
+body.footer-visible {
+	background: $black;
+}
+
+main {
+	background: $white;
+	position: relative;
+	z-index: 1;
+}
+
+.divider {
+	height: $gap-4xl;
+}
+
+.footer {
+	background: $black;
+	position: relative;
+	z-index: 2;
+}
