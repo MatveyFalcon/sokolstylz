@@ -1,0 +1,77 @@
+.practice {
+	&__wrapper {
+		@extend %container;
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: minmax(420px, 1fr) minmax(450px, 1.2fr);
+		align-items: start;
+
+		gap: $gap-4xl;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+
+		width: 100%;
+	}
+
+	&__title {
+		@include title-faq();
+		margin-bottom: $fs-lg;
+	}
+
+	&__text {
+		@include p($align: left, $transform: none);
+	}
+
+	&__gallery {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		gap: $gap-lg-md;
+
+		align-items: start;
+	}
+
+	&__image {
+		display: block;
+
+		width: 100%;
+		height: auto;
+
+		object-fit: cover;
+	}
+}
+
+@include mobile {
+	.info-bar {
+		&__text {
+			font-size: $fs-sm;
+		}
+	}
+
+	.practice {
+		&__content {
+			grid-template-columns: 1fr;
+
+			gap: $fs-lg;
+		}
+
+		&__info {
+			max-width: 100%;
+		}
+
+		&__gallery {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+
+			gap: $gap-md;
+		}
+
+		&__title {
+			margin-bottom: $fs-base;
+		}
+	}
+}

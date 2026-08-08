@@ -25,3 +25,31 @@ experienceItems.forEach((item) => {
         }
     });
 });
+
+const footer = document.querySelector(".footer");
+
+// Только устройства с сенсорным экраном (iPhone, Android, iPad)
+const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+
+if (footer && isTouchDevice) {
+    function updateBackground() {
+        const rect = footer.getBoundingClientRect();
+
+        // Если верх футера находится в пределах экрана,
+        // делаем фон body черным.
+        const isFooterVisible = rect.top < window.innerHeight;
+
+        document.body.classList.toggle(
+            "footer-visible",
+            isFooterVisible
+        );
+    }
+
+    window.addEventListener("scroll", updateBackground, {
+        passive: true,
+    });
+
+    window.addEventListener("resize", updateBackground);
+
+    updateBackground();
+}
