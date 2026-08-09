@@ -1,0 +1,107 @@
+.contacts {
+	&__wrapper {
+		@extend %container;
+	}
+
+	&__group {
+		display: flex;
+		flex-direction: column;
+		gap: $fs-sm;
+		align-items: center;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: $fs-lg;
+		align-items: center;
+	}
+
+	&__info-image {
+		width: $fs-xl;
+		height: $fs-xl;
+	}
+
+	&__title {
+		@include title-faq($align: center);
+	}
+
+	&__text {
+		@include p($transform: none);
+		width: $width-xl;
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: row;
+		gap: $fs-lg;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+.btn,
+.btn-icon {
+	@extend %btn;
+}
+
+.btn-icon {
+	&__group {
+		display: inline-flex;
+		align-items: center;
+		gap: $gap-xs;
+	}
+
+	&__img {
+		width: 0.9em;
+		height: 0.9em;
+		transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+	}
+}
+
+.btn {
+	background-image: linear-gradient(currentColor, currentColor);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-size: 0 2px;
+	transition: background-size 0.4s;
+}
+
+.btn-icon {
+	background-image: linear-gradient(currentColor, currentColor);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-size: 100% 2px;
+	transition: background-size 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+@media (hover: hover) {
+	.btn:hover {
+		background-size: 100% 2px;
+	}
+
+	.btn-icon:hover {
+		background-size: 0 2px;
+	}
+
+	.btn-icon:hover .btn-icon__img {
+		transform: rotate(45deg);
+	}
+}
+
+@include mobile {
+	.contacts {
+		&__info {
+			gap: $fs-base;
+		}
+		&__title {
+			width: 30rem;
+		}
+		&__text {
+			width: 30rem;
+		}
+		&__links {
+			gap: $fs-md;
+		}
+	}
+}

@@ -115,7 +115,10 @@ navLinksSmooth.forEach(link => {
 
         if (!target) return;
 
-        const offset = 120; // смещение сверху
+        const offset = Math.min(
+            Math.max(window.innerWidth * 0.08, 126),
+            160
+        );
 
         const top =
             target.getBoundingClientRect().top +

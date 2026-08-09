@@ -8,7 +8,7 @@
 
 		grid-template-columns: 38fr 45fr;
 
-		align-items: center;
+		align-items: start;
 		gap: $gap-4xl;
 	}
 
@@ -23,6 +23,9 @@
 	&__title {
 		margin-bottom: $fs-lg;
 		@include title-faq();
+		&:nth-of-type(n + 2) {
+			margin-top: $fs-xl;
+		}
 	}
 
 	&__text {

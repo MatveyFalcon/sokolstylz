@@ -177,7 +177,7 @@
 
   // Only insert newRequire.load when it is actually used.
   // The code in this file is linted against ES5, so dynamic import is not allowed.
-  // INSERT_LOAD_HERE
+  function $parcel$resolve(url) {  url = importMap[url] || url;  return import.meta.resolve(distDir + url);}newRequire.resolve = $parcel$resolve;
 
   Object.defineProperty(newRequire, 'root', {
     get: function () {
@@ -730,7 +730,156 @@ experienceItems.forEach((item)=>{
         if (!isActive) item.classList.add("active");
     });
 });
+const slider = document.querySelector(".slider");
+if (slider) {
+    const image = slider.querySelector(".slider__image");
+    const prevButton = slider.querySelector(".slider__button--prev");
+    const nextButton = slider.querySelector(".slider__button--next");
+    const current = slider.querySelector(".slider__current");
+    const total = slider.querySelector(".slider__total");
+    const images = [
+        new URL(require("ad114146bcdcaa7a")).href,
+        new URL(require("76028f3686f15a9")).href,
+        new URL(require("101c5cd018696098")).href,
+        new URL(require("f4f2142dd1429c0d")).href,
+        new URL(require("6d81ac524f7f7135")).href,
+        new URL(require("a958d7d048847fcf")).href,
+        new URL(require("5de7bffcd7d23b36")).href
+    ];
+    console.log(images);
+    let currentIndex = 0;
+    let animationId = 0;
+    image.src = images[0];
+    total.textContent = String(images.length).padStart(2, "0");
+    updateCounter();
+    preloadImages();
+    function updateCounter() {
+        current.textContent = String(currentIndex + 1).padStart(2, "0");
+    }
+    function preloadImages() {
+        const nextIndex = (currentIndex + 1) % images.length;
+        const prevIndex = (currentIndex - 1 + images.length) % images.length;
+        const next = new Image();
+        next.src = images[nextIndex];
+        const prev = new Image();
+        prev.src = images[prevIndex];
+    }
+    function changeSlide(direction) {
+        animationId++;
+        const currentAnimation = animationId;
+        image.classList.remove("fade-in");
+        image.classList.add("fade-out");
+        setTimeout(()=>{
+            if (currentAnimation !== animationId) return;
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            image.src = images[currentIndex];
+            updateCounter();
+            preloadImages();
+            image.classList.remove("fade-out");
+            image.classList.add("fade-in");
+            setTimeout(()=>{
+                if (currentAnimation !== animationId) return;
+                image.classList.remove("fade-in");
+            }, 200);
+        }, 100);
+    }
+    prevButton.addEventListener("click", ()=>changeSlide(-1));
+    nextButton.addEventListener("click", ()=>changeSlide(1));
+    document.addEventListener("keydown", (event)=>{
+        if (event.key === "ArrowLeft") changeSlide(-1);
+        if (event.key === "ArrowRight") changeSlide(1);
+    });
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let isPointerDown = false;
+    const DRAG_DISTANCE = 90;
+    function pointerDown(x) {
+        startX = x;
+        currentX = x;
+        isPointerDown = true;
+        isDragging = false;
+    }
+    function pointerMove(x) {
+        if (!isPointerDown) return;
+        currentX = x;
+        const delta = currentX - startX;
+        if (Math.abs(delta) > 12) isDragging = true;
+    }
+    function pointerUp() {
+        if (!isPointerDown) return;
+        const delta = currentX - startX;
+        if (isDragging && Math.abs(delta) > DRAG_DISTANCE) changeSlide(delta < 0 ? 1 : -1);
+        isPointerDown = false;
+        isDragging = false;
+    }
+    image.addEventListener("mousedown", (event)=>{
+        event.preventDefault();
+        pointerDown(event.clientX);
+    });
+    window.addEventListener("mousemove", (event)=>{
+        pointerMove(event.clientX);
+    });
+    window.addEventListener("mouseup", ()=>{
+        pointerUp();
+    });
+    image.addEventListener("touchstart", (event)=>{
+        if (event.touches.length !== 1 || window.visualViewport.scale > 1) return;
+        pointerDown(event.touches[0].clientX);
+    }, {
+        passive: true
+    });
+    image.addEventListener("touchmove", (event)=>{
+        if (event.touches.length !== 1 || window.visualViewport.scale > 1) return;
+        pointerMove(event.touches[0].clientX);
+    }, {
+        passive: true
+    });
+    image.addEventListener("touchend", ()=>{
+        pointerUp();
+    }, {
+        passive: true
+    });
+}
+const footer = document.querySelector(".footer");
+// Только устройства с сенсорным экраном (iPhone, Android, iPad)
+const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+if (footer && isTouchDevice) {
+    function updateBackground() {
+        const rect = footer.getBoundingClientRect();
+        // Если верх футера находится в пределах экрана,
+        // делаем фон body черным.
+        const isFooterVisible = rect.top < window.innerHeight;
+        document.body.classList.toggle("footer-visible", isFooterVisible);
+    }
+    window.addEventListener("scroll", updateBackground, {
+        passive: true
+    });
+    window.addEventListener("resize", updateBackground);
+    updateBackground();
+}
 
-},{}]},["2nas7","eP0QM"], "eP0QM", "parcelRequiref99c", {})
+},{"ad114146bcdcaa7a":"7J853","76028f3686f15a9":"jMNCg","101c5cd018696098":"lQZdC","f4f2142dd1429c0d":"XBpq7","6d81ac524f7f7135":"icNDY","a958d7d048847fcf":"9eONm","5de7bffcd7d23b36":"cf2EI"}],"7J853":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("slider-01.ab418fb7.webp") + "?" + Date.now();
+
+},{}],"jMNCg":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("slider-02.6cb726d8.webp") + "?" + Date.now();
+
+},{}],"lQZdC":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("slider-03.9fe0c82f.webp") + "?" + Date.now();
+
+},{}],"XBpq7":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("slider-04.d2ed4187.webp") + "?" + Date.now();
+
+},{}],"icNDY":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("slider-05.41528c81.webp") + "?" + Date.now();
+
+},{}],"9eONm":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("slider-06.7d2e60f4.webp") + "?" + Date.now();
+
+},{}],"cf2EI":[function(require,module,exports,__globalThis) {
+module.exports = module.bundle.resolve("slider-07.2c83a607.webp") + "?" + Date.now();
+
+},{}]},["2nas7","eP0QM"], "eP0QM", "parcelRequiref99c", {}, "./", "/")
 
 //# sourceMappingURL=myprojects.f4df2c85.js.map
