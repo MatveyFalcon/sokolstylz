@@ -446,6 +446,7 @@ ul {
 }
 
 .myworks__image--1 {
+  aspect-ratio: .785;
   grid-area: one;
 }
 
