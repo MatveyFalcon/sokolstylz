@@ -19,6 +19,11 @@
 
 		align-items: stretch;
 	}
+	&__cards > .project__card:nth-child(odd):last-child {
+		grid-column: 1 / -1;
+		width: calc(50% - #{$gap-lg-md / 2});
+		justify-self: center;
+	}
 }
 
 .info-bar {
@@ -117,44 +122,48 @@
 		z-index: 1;
 	}
 
-	&__card--wide {
-		width: 100%;
-		aspect-ratio: 2.1;
-		margin-top: $gap-lg-md;
+	// &__card--wide {
+	// 	width: 100%;
+	// 	aspect-ratio: 2.1;
+	// 	margin-top: $gap-lg-md;
 
-		.project__card-image--desktop {
-			width: 46%;
+	// 	.project__card-image--desktop {
+	// 		width: 46%;
 
-			right: 3%;
-			bottom: 0;
+	// 		right: 3%;
+	// 		bottom: 0;
 
-			z-index: 4;
-		}
+	// 		z-index: 4;
+	// 	}
 
-		.project__card-image--tablet {
-			width: 24%;
+	// 	.project__card-image--tablet {
+	// 		width: 24%;
 
-			right: 37%;
-			bottom: 6%;
+	// 		right: 37%;
+	// 		bottom: 6%;
 
-			z-index: 2;
-		}
+	// 		z-index: 2;
+	// 	}
 
-		.project__card-image--phone {
-			width: 10%;
+	// 	.project__card-image--phone {
+	// 		width: 10%;
 
-			right: 41%;
-			bottom: 5%;
+	// 		right: 41%;
+	// 		bottom: 5%;
 
-			z-index: 3;
-		}
-	}
+	// 		z-index: 3;
+	// 	}
+	// }
 }
 
 @include mobile {
 	.projects {
 		&__cards {
 			grid-template-columns: 1fr;
+			> .project__card:nth-child(odd):last-child {
+				width: 100%;
+				grid-column: auto;
+			}
 		}
 	}
 	.info-bar {
@@ -167,26 +176,26 @@
 		&__card {
 			padding: $gap-md;
 		}
-		&__card--wide {
-			aspect-ratio: 1.1;
-			.project__card-image--desktop {
-				width: 74%;
-				right: -10%;
-				bottom: 7%;
-			}
+		// &__card--wide {
+		// 	aspect-ratio: 1.1;
+		// 	.project__card-image--desktop {
+		// 		width: 74%;
+		// 		right: -10%;
+		// 		bottom: 7%;
+		// 	}
 
-			.project__card-image--tablet {
-				width: 35%;
-				right: 47%;
-				bottom: 13%;
-			}
+		// 	.project__card-image--tablet {
+		// 		width: 35%;
+		// 		right: 47%;
+		// 		bottom: 13%;
+		// 	}
 
-			.project__card-image--phone {
-				width: 16%;
-				right: 54%;
-				bottom: 12%;
-			}
-		}
+		// 	.project__card-image--phone {
+		// 		width: 16%;
+		// 		right: 54%;
+		// 		bottom: 12%;
+		// 	}
+		// }
 	}
 }
 
@@ -207,17 +216,17 @@
 		transform: rotate(5deg) translateY(-10px);
 	}
 
-	.project__card--wide:hover {
-		.project__card-image--desktop {
-			transform: translateY(-12px);
-		}
+	// .project__card--wide:hover {
+	// 	.project__card-image--desktop {
+	// 		transform: translateY(-12px);
+	// 	}
 
-		.project__card-image--tablet {
-			transform: translate(-8px, -18px);
-		}
+	// 	.project__card-image--tablet {
+	// 		transform: translate(-8px, -18px);
+	// 	}
 
-		.project__card-image--phone {
-			transform: translate(-14px, 12px);
-		}
-	}
+	// 	.project__card-image--phone {
+	// 		transform: translate(-14px, 12px);
+	// 	}
+	// }
 }
