@@ -1,0 +1,10 @@
+.footer {
+	background-color: $black;
+	display: flex;
+	flex-direction: column;
+	gap: $fs-sm;
+	padding: $gap-2xl 0;
+	&__text {
+		@include p($color: $white, $transform: none);
+	}
+}
