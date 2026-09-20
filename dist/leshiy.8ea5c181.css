@@ -258,8 +258,8 @@ ul {
 .hero__image {
   object-fit: contain;
   flex: 1;
-  width: clamp(420px, 45vw, 920px);
-  height: auto;
+  width: auto;
+  height: clamp(280px, 35vw, 600px);
   display: block;
 }
 

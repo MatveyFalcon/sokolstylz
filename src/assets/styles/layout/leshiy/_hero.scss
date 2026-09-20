@@ -34,9 +34,9 @@
 	&__image {
 		flex: 1;
 
-		width: clamp(420px, 45vw, 920px);
+		width: auto;
 
-		height: auto;
+		height: clamp(280px, 35vw, 600px);
 
 		object-fit: contain;
 
